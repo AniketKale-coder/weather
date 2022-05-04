@@ -27,8 +27,10 @@ class _HomeState extends State<Home> {
       case "Clouds":
         return "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFpbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80";
 
+      // default:
+      //   return "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFpbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80";
       default:
-        return "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFpbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80";
+        return "https://wallpaperaccess.com/full/4416634.jpg";
     }
   }
 
@@ -63,9 +65,11 @@ class _HomeState extends State<Home> {
                           backgroundColor: Colors.black,
                         ),
                         onPressed: () {
-                          setState(() {
-                            city = "Nashik";
-                          });
+                          setState(
+                            () {
+                              city = "Nashik";
+                            },
+                          );
                         },
                         child: Text(
                           "Reset",
@@ -86,8 +90,8 @@ class _HomeState extends State<Home> {
             child: Stack(
               children: [
                 Positioned.fill(
-                  child: Image.network(
-                    getImgUrl(weather.weather?[0].main ?? ""),
+                  child: Image.asset(
+                    "assets/wheater1.webp",
                     fit: BoxFit.cover,
                   ),
                 ),
